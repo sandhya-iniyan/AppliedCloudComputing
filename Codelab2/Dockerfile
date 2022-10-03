@@ -14,13 +14,12 @@ EXPOSE 8080
 #run jupyter notebook
 CMD jupyter notebook --ip=0.0.0.0 --port 8080 --allow-root
 
-
+#Switch to the user
+USER morty
 #Create a directory in the home directory of your user for the notebooks
 RUN mkdir folder
 #Make sure that your new user owns everything that is in the folder
 RUN chown morty folder
-#Switch to the user
-USER morty
 
 WORKDIR $(pwd)
 
