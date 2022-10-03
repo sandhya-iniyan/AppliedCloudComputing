@@ -23,4 +23,6 @@ RUN chown morty folder
 USER morty
 
 WORKDIR $(pwd)
-RUN $(mv) sample*.* newfolder
+
+#Download your favorite notebooks (sample1, sample2, sample3) into this folder
+RUN mv sample*.* folder
