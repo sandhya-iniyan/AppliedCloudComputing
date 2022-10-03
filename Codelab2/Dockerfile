@@ -25,3 +25,10 @@ WORKDIR $(pwd)
 
 #Download your favorite notebooks (sample1, sample2, sample3) into this folder
 RUN mv sample*.* folder
+
+#Copy the requirements.txt document into your Dockerfile
+ADD requirements.txt .
+#Install the python libraries that are included in the requirements.txt
+RUN pip install -r requirements.txt
+
+
