@@ -4,7 +4,7 @@ import json
 import os
 app = Flask(__name__)
 
-@app.route('/meal_rec')
+@app.route('/meal_recommendation')
 def meal_recommender():
     meals = [
     {'Meal': 'avocado', 'Price': '$1'},
