@@ -28,11 +28,11 @@ services:
     ports:
       - "${CONSUMER_PORT}:${CONSUMER_PORT}"
 
-  db_admin: # with this being run, the Dockerfile is not run. 
+  db_admin: 
     image: dpage/pgadmin4
     hostname: dba # optional
     environment:
-      - PGADMIN_DEFAULT_EMAIL=${PGA_ADMIN_NAME} # when setting env do not include space
+      - PGADMIN_DEFAULT_EMAIL=${PGA_ADMIN_NAME}
       - PGADMIN_DEFAULT_PASSWORD=${PGA_ADMIN_PASS}
     ports:
       - "${PGA_PORT}:${PGA_PORT}"
@@ -48,4 +48,4 @@ services:
       - "${DB_PORT}:${DB_PORT}"
     volumes: 
       - ./db/data:/var/lib/postgresql/data/
-      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql # execute the init sql script
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
