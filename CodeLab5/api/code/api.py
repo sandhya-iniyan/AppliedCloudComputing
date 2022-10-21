@@ -18,7 +18,7 @@ def meal_recommender():
     #Creating a cursor object using the cursor() method
     cursor = conn.cursor()
     cursor.execute(
-        '''SELECT Meal, Price FROM Menu ORDER BY random() limit 1;''')
+        '''SELECT MealName, MealPrice FROM Menu ORDER BY random() limit 1;''')
     #Fetching 1st row from the table
     result = cursor.fetchall()
     conn.close()
