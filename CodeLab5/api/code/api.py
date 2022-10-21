@@ -15,7 +15,7 @@ def meal_recommender():
                             host=os.environ.get('DB_HOST'),
                             port=os.environ.get('DB_PORT'))
 
-    #Creating a cursor object using the cursor() method
+    
     cursor = conn.cursor()
     cursor.execute(
         '''SELECT MealName, MealPrice FROM Menu ORDER BY random() limit 1;''')
